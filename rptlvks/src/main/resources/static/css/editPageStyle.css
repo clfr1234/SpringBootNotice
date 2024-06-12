@@ -1,0 +1,50 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+html {
+    overflow-y: scroll; /* 수직 스크롤바 항상 표시 */
+}
+
+input::-webkit-input-placeholder { text-align: center; }
+input::-moz-placeholder { text-align: center; }
+input:-ms-input-placeholder { text-align: center; }
+input:-moz-placeholder { text-align: center; }
+input::placeholder { text-align: center; }
+
+#noticeTitle {
+    display: block;
+    height: 2.5rem; /* 40px */
+    border: none;
+    font-size: 2.25rem; /* 36px */
+    outline: none;
+    border-bottom: 0.125rem solid lightskyblue; /* 2px */
+    width: 62.5rem; /* 1000px */
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#buttons {
+    width: 100%;
+    height: 2.5rem;
+    text-align: center;
+}
+
+.btnStyle {
+    width: 9.375rem; /* 150px */
+    height: 2.5rem; /* 40px */
+    line-height: 2.5rem; /* 40px */
+    font-size: 1rem; /* 16px */
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    font-size: 1rem; /* 16px */
+    background-color: lightskyblue;
+    color: black;
+    cursor: pointer;
+}

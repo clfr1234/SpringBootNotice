@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+html {
+    font-size: 16px; /* Set the base font size */
+    overflow-y: scroll; /* 수직 스크롤바 항상 표시 */
+}
+
+#loginContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25rem; /* Changed from 400px to 25rem */
+    height: 25rem; /* Changed from 400px to 25rem */
+    border: 0.25rem solid lightskyblue; /* Changed from 4px to 0.25rem */
+    border-radius: 0.625rem; /* Changed from 10px to 0.625rem */
+    background: white;
+}
+
+#loginContainer > h2 {
+    position: absolute;
+    left: 1.25rem; /* Changed from 20px to 1.25rem */
+    width: 23.75rem; /* Changed from 380px to 23.75rem */
+    height: 3.125rem; /* Changed from 50px to 3.125rem */
+    text-align: center;
+    font-size: 2.1875rem; /* Changed from 35px to 2.1875rem */
+}
+
+.inputStyle {
+    font-size: 1.25rem; /* Changed from 20px to 1.25rem */
+    width: 22.0625rem; /* Changed from 353px to 22.0625rem */
+    border: none;
+    border-bottom: 0.125rem solid lightskyblue; /* Changed from 2px to 0.125rem */
+    outline: none;
+    height: 2.5rem; /* Changed from 40px to 2.5rem */
+    line-height: 2.5rem; /* Changed from 40px to 2.5rem */
+}
+
+#idInput {
+    position: absolute;
+    width: 23.75rem; /* Changed from 380px to 23.75rem */
+    top: 6.25rem; /* Changed from 100px to 6.25rem */
+    left: 1.25rem; /* Changed from 20px to 1.25rem */
+}
+
+#passwordInput {
+    position: absolute;
+    width: 23.75rem; /* Changed from 380px to 23.75rem */
+    top: 11.875rem; /* Changed from 190px to 11.875rem */
+    left: 1.25rem; /* Changed from 20px to 1.25rem */
+}
+
+#submitBtn {
+    position: absolute;
+    width: 23.75rem; /* Changed from 380px to 23.75rem */
+    height: 5rem; /* Changed from 80px to 5rem */
+    bottom: 0rem; /* Changed from 10px to 0.625rem */
+    left: 0.625rem; /* Changed from 10px to 0.625rem */
+}
+
+.bottomBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 9.375rem; /* Changed from 150px to 9.375rem */
+    height: 2.5rem; /* Changed from 40px to 2.5rem */
+    line-height: 2.5rem; /* Changed from 40px to 2.5rem */
+    font-size: 1.25rem; /* Changed from 20px to 1.25rem */
+    border: none;
+    border-radius: 0.9375rem; /* Changed from 15px to 0.9375rem */
+}
+
+#loginBtn {
+    right: 1.25rem; /* Changed from 20px to 1.25rem */
+    background-color: lightgreen;
+}
+
+#loginBtn:hover {
+    font-weight: bold;
+}
+
+#loginBtn:active {
+    background-color: #77cd77;
+}
+
+#cancel {
+    left: 1.25rem; /* Changed from 20px to 1.25rem */
+    background-color: lightpink;
+}
+
+#cancel:hover {
+    font-weight: bold;
+}
+
+#cancel:active {
+    background-color: #dda6af;
+}
+
+#eye-icon {
+    position: absolute;
+    top: 2.1875rem; /* Changed from 35px to 2.1875rem */
+    right: 2.1875rem; /* Changed from 35px to 2.1875rem */
+}
+
+#alertMessage {
+    position: absolute;
+    width: 22.5rem; /* Changed from 360px to 22.5rem */
+    height: 2.5rem; /* Changed from 40px to 2.5rem */
+    bottom: 5rem; /* Changed from 80px to 5rem */
+    left: 1.25rem; /* Changed from 20px to 1.25rem */
+}
+
+#findPassword {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#goRegister {
+    position: absolute;
+    top: 1.25rem; /* Changed from 20px to 1.25rem */
+    left: 0;
+}

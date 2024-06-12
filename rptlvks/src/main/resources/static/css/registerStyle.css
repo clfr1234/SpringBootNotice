@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+* {
+    font-size: 16px;
+}
+
+html {
+    overflow-y: scroll; /* 수직 스크롤바 항상 표시 */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+#registerContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25rem;
+    /* 400px를 25rem으로 변경 */
+    height: 46.25rem;
+    /* 740px를 46.25rem으로 변경 */
+    border: 0.25rem solid lightskyblue;
+    /* 4px를 0.25rem으로 변경 */
+    border-radius: 0.625rem;
+    /* 10px를 0.625rem으로 변경 */
+    background: white;
+}
+
+#registerContainer>h3 {
+    position: absolute;
+    left: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+    width: 23.75rem;
+    /* 380px를 23.75rem으로 변경 */
+    height: 3.125rem;
+    /* 50px를 3.125rem으로 변경 */
+    text-align: center;
+    font-size: 2.1875rem;
+    /* 35px를 2.1875rem으로 변경 */
+}
+
+#idInput {
+    position: absolute;
+    width: 23.75rem;
+    /* 380px를 23.75rem으로 변경 */
+    top: 6.25rem;
+    /* 100px를 6.25rem으로 변경 */
+    left: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+}
+
+#nameInput {
+    position: absolute;
+    width: 23.75rem;
+    /* 380px를 23.75rem으로 변경 */
+    top: 11.875rem;
+    /* 190px를 11.875rem으로 변경 */
+    left: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+}
+
+#emailInput {
+    position: absolute;
+    width: 23.75rem;
+    top: 17.5rem;
+    left: 1.25rem;
+}
+
+#checkEmailBtn {
+    font-size: 0.875rem;
+    position: absolute;
+    top: 2.1875rem;
+    /* 35px를 2.1875rem으로 변경 */
+    right: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+    width: 6.875rem;
+    height: 1.875rem;
+    line-height: 1.875rem;
+    /* 70px를 4.375rem으로 변경 */
+    border: none;
+    border-radius: 0.625rem;
+    /* 10px를 0.625rem으로 변경 */
+    background-color: lightpink;
+}
+
+#checkEmailInput {
+    position: absolute;
+    width: 23.75rem;
+    top: 22.875rem;
+    left: 1.25rem;
+}
+
+#checkEmailNumBtn {
+    position: absolute;
+    font-size: 0.875rem;
+    top: 2.1875rem;
+    /* 35px를 2.1875rem으로 변경 */
+    right: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+    width: 6.875rem;
+    height: 1.875rem;
+    line-height: 1.875rem;
+    /* 70px를 4.375rem으로 변경 */
+    border: none;
+    border-radius: 0.625rem;
+    /* 10px를 0.625rem으로 변경 */
+    background-color: lightpink;
+}
+
+#checkEmailBtn:hover {
+    font-weight: bold;
+}
+
+#checkEmailBtn:active {
+    background-color: lightgray;
+}
+
+#checkEmailNumBtn:hover {
+    font-weight: bold;
+}
+
+#checkEmailNumBtn:active {
+    background-color: lightgray;
+}
+
+#passwordInput {
+    position: absolute;
+    width: 23.75rem;
+    /* 380px를 23.75rem으로 변경 */
+    top: 28.75rem;
+    /* 460px를 28.75rem으로 변경 */
+    left: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+}
+
+#confirm_passwordInput {
+    position: absolute;
+    width: 23.75rem;
+    /* 380px를 23.75rem으로 변경 */
+    top: 34.375rem;
+    /* 550px를 34.375rem으로 변경 */
+    left: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+}
+
+.inputStyle {
+    font-size: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+    width: 22.0625rem;
+    /* 353px를 22.0625rem으로 변경 */
+    border: none;
+    border-bottom: 0.125rem solid lightskyblue;
+    /* 2px를 0.125rem으로 변경 */
+    outline: none;
+    height: 2.5rem;
+    /* 40px를 2.5rem으로 변경 */
+    line-height: 2.5rem;
+    /* 40px를 2.5rem으로 변경 */
+}
+
+.inputStyleI {
+    font-size: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+    width: 15rem;
+    /* 240px를 15rem으로 변경 */
+    border: none;
+    border-bottom: 0.125rem solid lightskyblue;
+    /* 2px를 0.125rem으로 변경 */
+    outline: none;
+    height: 2.5rem;
+    /* 40px를 2.5rem으로 변경 */
+    line-height: 2.5rem;
+    /* 40px를 2.5rem으로 변경 */
+}
+
+#distinctBtn {
+    position: absolute;
+    font-size: 0.875rem;
+    top: 2.1875rem;
+    right: 1.25rem;
+    width: 6.875rem;
+    height: 1.875rem;
+    line-height: 1.875rem;
+    border: none;
+    border-radius: 0.625rem;
+    background-color: lightpink;
+}
+
+#distinctBtn:hover {
+    font-weight: bold;
+}
+
+#distinctBtn:active {
+    background-color: lightgray;
+}
+
+#submitBtn {
+    position: absolute;
+    width: 23.75rem;
+    /* 380px를 23.75rem으로 변경 */
+    height: 5rem;
+    /* 80px를 5rem으로 변경 */
+    bottom: 0rem;
+    /* 10px를 0.625rem으로 변경 */
+    left: 0.625rem;
+    /* 10px를 0.625rem으로 변경 */
+}
+
+.bottomBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 9.375rem;
+    /* 150px를 9.375rem으로 변경 */
+    height: 2.5rem;
+    /* 40px를 2.5rem으로 변경 */
+    line-height: 2.5rem;
+    /* 40px를 2.5rem으로 변경 */
+    font-size: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+    border: none;
+    border-radius: 0.9375rem;
+    /* 15px를 0.9375rem으로 변경 */
+}
+
+#alreadyHaveAccount {
+    position: absolute;
+    bottom: 5rem;
+    /* 80px를 5rem으로 변경 */
+    left: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+    cursor: pointer;
+}
+
+#submit1 {
+    right: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+    background-color: lightgreen;
+}
+
+#submit1:hover {
+    font-weight: bold;
+}
+
+#submit1:active {
+    background-color: #77cd77;
+}
+
+#cancel {
+    left: 1.25rem;
+    /* 20px를 1.25rem으로 변경 */
+    background-color: lightpink;
+}
+
+#cancel:hover {
+    font-weight: bold;
+}
+
+#cancel:active {
+    background-color: #dda6af;
+}
+
+#eye-icon {
+    position: absolute;
+    top: 2.1875rem;
+    /* 35px를 2.1875rem으로 변경 */
+    right: 2.1875rem;
+    /* 35px를 2.1875rem으로 변경 */
+}

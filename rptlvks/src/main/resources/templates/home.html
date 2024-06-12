@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link href="/css/homeStyle.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="container">
+    <div id="topWrap">
+        <div id="logo"><a href="/"><img src="/image/logo.png" rel="logoimg"></a></div>
+        <div id="searchBox"><input type="text" id="searchBoxInput" placeholder="검색"></div>
+        <div id="rllForm">
+            <div sec:authorize="isAnonymous()" style="width:100%">
+                <a href="/login"><button type="button" class="rllBtn btnStyle" id="loginBtn">로그인</button></a>
+                <a href="/register"><button type="button" class="rllBtn btnStyle" id="registerBtn">회원가입</button></a>
+            </div>
+            <div sec:authorize="isAuthenticated()" style="width:100%">
+                <form id="logoutForm" action="/logout" method="post">
+                    <div id="loginUserNameShow"><span th:text="${userdata.getName()}"></span>님</div>
+                    <button type="submit" class="rllBtn btnStyle" id="logoutBtn" style="float: right;margin-right: 30px;">로그아웃하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="contentsWrap">
+        <ul id="noticeList">
+            <li th:each="noticeEach : ${noticeData}"><!--얘 누르면 이동하게 할거임-->
+                <a th:href="@{/noticeIndexCheck(checkIdx = ${noticeEach.getIdx()})}">
+                    <div class="noticeLiLeft">
+                        <input type="hidden" class="noticeIndex" th:value="${noticeEach.getIdx()}">
+                        <div class="noticeTitle" th:text="${noticeEach.getNoticeTitle()}">제목제목</div>
+                        <div class="noticeWriter"
+                             th:text="${noticeEach.getName() + ' (' + noticeEach.getId() + ')'}">글쓴이(아이디)
+                        </div>
+                    </div>
+                    <div class="noticeLiRight">
+                        <div class="noticeWriteDate">
+                            <span th:text="${#dates.format(noticeEach.getDate(), 'yyyy')}"></span><br>
+                            <span th:text="${#dates.format(noticeEach.getDate(), 'MM/dd')}"></span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <footer>
+
+        <div id="pagination" th:if="${endPage > 1}">
+            <ul>
+                <!-- 페이지 번호 표시 -->
+                <li th:each="pageNumber : ${#numbers.sequence(startPage, endPage)}">
+                    <a th:href="@{'/?page=' + ${pageNumber}}"><span th:text="${pageNumber}"
+                                                                    th:classappend="${pageNumber == noticeData.number + 1} ? 'current-page' : ''"></span></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <div id="goWriteBox">
+        <form id="goWrite" action="/goWrite" method="get">
+            <button type="submit" class="btnStyle" id="goWriteBtn">글쓰기</button>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

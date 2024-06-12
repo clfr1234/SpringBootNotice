@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-y: scroll; /* 수직 스크롤바 항상 표시 */
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-size: 16px; /* Base font size */
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#topWrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    height: 2.5rem;
+    width: 7.8125rem;
+    border: none;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#searchBox {
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchBoxInput {
+    height: 2.5rem;
+    border: none;
+    font-size: 2.25rem;
+    outline: none;
+    border-bottom: 0.125rem solid lightskyblue;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#rllForm {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rllBtn {
+    flex: 1;
+    width: 6.25rem; /* 100px */
+    height: 2.5rem; /* 40px */
+}
+
+#contentsWrap {
+    flex: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginUserNameShow {
+    float: left;
+    height: 2.5rem; /* 40px */
+    text-align: center;
+    line-height: 2.5rem; /* 40px */
+}
+
+.btnStyle {
+    width: 9.375rem; /* 150px */
+    height: 2.5rem; /* 40px */
+    line-height: 2.5rem; /* 40px */
+    font-size: 1rem; /* 16px */
+    border: none;
+    border-radius: 0.9375rem; /* 15px */
+    font-size: 1rem; /* 16px */
+    background-color: lightskyblue;
+    color: black;
+}
+
+.btnStyle:hover {
+    background-color: rgb(73, 177, 241);
+    cursor: pointer;
+}
+
+.btnStyle:active {
+    background-color: rgb(41, 161, 235);
+}
+
+#noticeList {
+    position: absolute;
+    list-style: none;
+    width: 90%;
+    height: 70%;
+}
+
+#noticeList li:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#noticeList>li {
+    width: 100%;
+    height: 3.125rem; /* 50px */
+    border-bottom: 0.125rem solid lightskyblue; /* 2px */
+}
+
+.noticeTitle {
+    width: 100%;
+    height: 1.875rem; /* 30px */
+    font-size: 1.5rem; /* 24px */
+    display: block;
+}
+
+.noticeWriter {
+    width: 100%;
+    height: 1.25rem; /* 20px */
+    display: block;
+    font-size: 0.75rem; /* 12px */
+}
+
+.noticeWriteDate {
+    display: block;
+    width: 100%;
+    height: 3.125rem; /* 50px */
+    float: left;
+}
+
+.noticeLiLeft {
+    width: 90%;
+    height: 3.125rem; /* 50px */
+    float: left;
+}
+
+.noticeLiRight {
+    width: 10%;
+    height: 3.125rem; /* 50px */
+    float: left;
+    text-align: center;
+}
+
+footer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#goWriteBox {
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+}
+
+#pagination {
+    flex: 1;
+    align-items: center;
+}
+
+#pagination ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#pagination ul li {
+    display: inline;
+    margin-right: 0.625rem; /* 10px */
+}
+
+#pagination ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+#pagination ul li a:hover {
+    text-decoration: underline;
+}
+
+.current-page {
+    font-weight: bold;
+    color: red;
+}

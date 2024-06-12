@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko-KR" xmlns:th="http://www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/editPageStyle.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
+    <title>글수정</title>
+</head>
+<body>
+<form action="/goEditNotice" method="post" id="noticeForm" style="width:1000px;">
+    <input type="text" name="noticeTitle" id="noticeTitle" placeholder="제목" th:value="${notice.getNoticeTitle()}" style="margin-top: 10px;">
+    <input type="hidden" name="content" id="content">
+    <div id="smarteditor" style="margin-top: 10px;">
+        <textarea name="editorTxt" id="editorTxt"
+                  rows="20" cols="10"
+                  placeholder="내용을 입력해주세요"
+                  style="width: 100%;">[[${notice.getContent()}]]</textarea>
+    </div>
+        <input type="hidden" th:value="${notice.getIdx()}" name="idx">
+        <div id="buttons">
+        <input value="수정하기" class="btnStyle" type="button" onclick="submitNotice()"/>
+        <input type="button" class="btnStyle" value="수정취소" id="cancel" onclick="dontEdit()">
+        </div>
+</form>
+
+<script>
+    let oEditors = []
+
+    smartEditor = function() {
+      console.log("Naver SmartEditor")
+      nhn.husky.EZCreator.createInIFrame({
+        oAppRef: oEditors,
+        elPlaceHolder: "editorTxt",
+        sSkinURI: "/smarteditor/SmartEditor2Skin.html",
+        fCreator: "createSEditor2"
+      })
+    }
+
+    $(document).ready(function() {
+      smartEditor()
+    });
+
+    function submitNotice() {
+        let check = confirm("수정하시겠습니까?");
+
+        if(check) {
+            if(document.getElementById("noticeTitle").value == "") {
+                alert("제목을 입력해주세요");
+                return;
+            }
+            oEditors.getById["editorTxt"].exec("UPDATE_CONTENTS_FIELD", []);
+            let content = document.getElementById("editorTxt").value;
+            document.getElementById("content").value = content;
+            alert("수정되었습니다!");
+            document.getElementById('noticeForm').submit();
+        }
+    }
+
+    function dontEdit() {
+        let check = confirm("수정을 중단하시겠습니까?");
+
+        if(check) {
+            history.back();
+        }
+    }
+</script>
+</body>
+</html>

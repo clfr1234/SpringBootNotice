@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll; /* 수직 스크롤바 항상 표시 */
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#topWrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    height: 2.5rem;
+    width: 7.8125rem;
+    border: none;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#searchBox {
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchBoxInput {
+    height: 2.5rem;
+    border: none;
+    font-size: 2.25rem;
+    outline: none;
+    border-bottom: 0.125rem solid lightskyblue;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#rllForm {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rllBtn {
+    flex: 1;
+    width: 6.25rem; /* 100px */
+    height: 2.5rem; /* 40px */
+}
+
+#contentsWrap {
+    flex: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginUserNameShow {
+    float: left;
+    height: 2.5rem; /* 40px를 rem 단위로 변환 */
+    text-align: center;
+    line-height: 2.5rem; /* 40px를 rem 단위로 변환 */
+}
+
+.btnStyle {
+    width: 9.375rem; /* 150px를 rem 단위로 변환 */
+    height: 2.5rem; /* 40px를 rem 단위로 변환 */
+    line-height: 2.5rem; /* 40px를 rem 단위로 변환 */
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.9375rem; /* 15px를 rem 단위로 변환 */
+    background-color: lightskyblue;
+    color: black;
+}
+
+.btnStyle:hover {
+    background-color: rgb(73, 177, 241);
+    cursor: pointer;
+}
+
+.btnStyle:active {
+    background-color: rgb(41, 161, 235);
+}
+
+#showNotice {
+    list-style: none;
+    position: absolute;
+    top: 7.5rem; /* 120px를 rem 단위로 변환 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+#nTitle {
+    position: absolute;
+    font-size: 2.5rem; /* 40px를 rem 단위로 변환 */
+    font-weight: bold;
+    top: 0;
+    left: 0;
+}
+
+#nName {
+    position: absolute;
+    font-size: 1.25rem; /* 20px를 rem 단위로 변환 */
+    top: 3.125rem; /* 50px를 rem 단위로 변환 */
+    left: 0px;
+}
+
+#nDate {
+    position: absolute;
+    font-size: 1rem; /* 16px를 rem 단위로 변환 */
+    top: 5rem; /* 80px를 rem 단위로 변환 */
+    left: 0px;
+}
+
+#nContent {
+    position: absolute;
+    top: 9.375rem; /* 150px를 rem 단위로 변환 */
+    left: 0px;
+}
+
+footer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#goWriteBox {
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    float: left;
+}
+
+#commentWrap {
+    flex-direction: column;
+    flex: 8;
+}
+
+#commentTop {
+    display: flex;
+    flex: 1;
+}
+
+#commentBottom {
+    flex: 4;
+    width: 100%;
+    height: 100%;
+}
+
+#commentInputDiv {
+    flex: 5;
+}
+
+#addComment {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#commentInput {
+    width: 100%;
+    margin: 5px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid lightskyblue;
+    height: 80%;
+    font-size: 20px;
+}
+
+#commentSubmitBtnDiv {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#showComment {
+    margin-top: 10px;
+}
+
+#showComment li {
+    display: flex;
+    border-bottom: 2px solid lightskyblue;
+    padding-bottom: 10px;
+}
+
+#userInfo {
+    flex:1;
+}
+
+#commentText {
+    flex:4;
+}
+
+#commentDate {
+    flex:1;
+}

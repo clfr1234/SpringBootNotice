@@ -1,0 +1,75 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/css/showNoticeStyle.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title th:text="${result.getNoticeTitle()}"></title>
+</head>
+<body>
+<div id="container">
+    <div id="topWrap">
+        <div id="logo"><a href="/"><img src="/image/logo.png" rel="logoimg"></a></div>
+        <div id="searchBox"><input type="text" id="searchBoxInput" placeholder="검색"></div>
+        <div id="rllForm">
+
+            <div sec:authorize="isAnonymous()" style="width:100%">
+                <a href="/login"><button type="button" class="rllBtn btnStyle" id="loginBtn">로그인</button></a>
+                <a href="/register"><button type="button" class="rllBtn btnStyle" id="registerBtn">회원가입</button></a>
+            </div>
+
+            <div sec:authorize="isAuthenticated()" style="width:100%">
+                <form id="logoutForm" action="/logout" method="post">
+                    <div id="loginUserNameShow"><span th:text="${userdata.getName()}"></span>님</div>
+                    <button type="submit" class="rllBtn btnStyle" id="logoutBtn" style="float: right;margin-right: 30px;">로그아웃하기</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div id="contentsWrap">
+        <div id="showNotice">
+            <div id="nTitle" th:text="${result.getNoticeTitle()}"></div>
+            <div id="nName" th:text="${result.getName() + ' (' + result.getId() + ')'}"></div>
+            <div id="nDate" th:text="${result.getDate()}"></div>
+
+
+            <div id="nContent" th:utext="${result.getContent()}"></div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+    <div id="goWriteBox">
+        <div id="noticeAuthControlBtn" sec:authorize="isAuthenticated()">
+            <form method="post" id="noticeEdit" name="noticeEdit" action="/noticeEdit">
+                <input type="hidden" th:value="${result.getIdx()}" name="idx">
+                <button th:if="${#authorization.expression('hasRole(''ADMIN'')')} or ${result.getId()} == ${userdata.getId()}" type="submit" class="btnStyle editNoticeBtn">수정</button>
+            </form>
+            <form id="deleteNotice" name="deleteNotice" method="post" action="/deleteNoticeIdxCheck">
+                <input type="hidden" th:value="${result.getIdx()}" name="idx">
+                <button th:if="${#authorization.expression('hasRole(''ADMIN'')')} or ${result.getId()} == ${userdata.getId()}" onclick="checkDelete()" type="button" class="btnStyle deleteNoticeBtn">삭제</button>
+            </form>
+        </div>
+        <form id="goWrite" action="/goWrite" method="get">
+                <button type="submit" class="btnStyle" id="goWriteBtn">글쓰기</button>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    function checkDelete() {
+        let reallyDelete = confirm("정말로 삭제하시겠습니까?");
+
+        if(reallyDelete) {
+            alert("삭제 완료!");
+            document.getElementById("deleteNotice").submit();
+        }
+    }
+</script>
+</body>
+</html>
